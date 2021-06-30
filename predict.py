@@ -25,6 +25,7 @@ def inference(model, image):
     image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     image = resize_image_with_pad(image, target_size=cfg.input_shape[:2])
     image = np.expand_dims(image, axis=0)
+    image /= 255.
 
     pred_mask = model.predict(image)
     pred_mask = tf.nn.softmax(pred_mask)
@@ -46,8 +47,8 @@ if __name__ == '__main__':
     model = UNet(cfg.input_shape, cfg.num_classes)
     model.load_weights("./weights/unet_weights.h5")
 
-    image = cv.imread("D:/Code/Data/VOC2012/JPEGImages/2007_000584.jpg")
-    mask = Image.open("D:/Code/Data/VOC2012/SegmentationClass/2007_000584.png")
+    image = cv.imread("D:/Code/Data/VOC2012/JPEGImages/2007_000033.jpg")
+    mask = Image.open("D:/Code/Data/VOC2012/SegmentationClass/2007_000033.png")
     palette = mask.palette
 
     result = inference(model, image)

@@ -43,7 +43,7 @@ class VOCDataset(Dataset):
         root = os.path.split(self.annotation_path)[0]
         root = os.path.split(root)[0]
         root = os.path.split(root)[0]
-        random.shuffle(self.annotation)
+        # random.shuffle(self.annotation)
 
         for image_id in self.annotation:
             image_path = "{}/JPEGImages/{}".format(root, image_id + '.jpg')
@@ -301,6 +301,6 @@ class VOCDataset(Dataset):
         dataset = dataset.repeat().batch(self.batch_size)
         dataset = dataset.prefetch(tf.data.experimental.AUTOTUNE)
         if self.aug:
-            dataset = dataset.shuffle(buffer_size=1)
+            dataset = dataset.shuffle(buffer_size=256)
 
         return dataset
