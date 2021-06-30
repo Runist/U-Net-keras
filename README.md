@@ -6,7 +6,7 @@ U-Net is pixel level classification, and the output is the category of each pixe
 
 ### Models for this repository
 
-I didn't find any pretrain weights. It's also different to other network like FCN, SegNet, doesn't have familiar backbone. U-Net Paper said it used isbi dataset, but I didn't complete reproduce U-Net which has more suitable for medical image padding manipulation. You can think of it as a simple U-Net. So I just random initialize weights to train in VOC dataset.
+I didn't find any pretrain weights. It's also different to other network like FCN, SegNet, doesn't have familiar backbone. U-Net Paper said it used [isbi](http://brainiac2.mit.edu/isbi_challenge/) dataset, but I didn't complete reproduce U-Net which has more suitable for medical image padding manipulation. You can think of it as a simple U-Net. So I just random initialize weights to train in VOC dataset.
 
 I still implement *ISBIdataset.py*. It has **elastic_transform** function which is a data augmentation for  cell membranes described in this paper.
 
@@ -88,10 +88,10 @@ IOU:  [0.90583348 0.61631588 0.46176812 0.32607745 0.20159544 0.33146206
  0.47725354 0.40103127 0.50151519 0.6797911  0.20051836 0.33062457
  0.28617971 0.49376667 0.42613842]
 ```
-4. I also provide **isbi** dataset.
+4. If you can't connect isbi website, I also provide **isbi** dataset.
 
 ```shell
-   wget https://github.com/Runist/U-Net-keras/releases/download/v0.1/membrane.zip
+wget https://github.com/Runist/U-Net-keras/releases/download/v0.1/membrane.zip
 ```
 
    
