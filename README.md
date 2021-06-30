@@ -16,7 +16,7 @@ I still implement *ISBIdataset.py*. It has **elastic_transform** function which 
 
 
 
-## Part 2. Quick  Start
+## Part 2. Quick  Prepare
 
 1. Pull this repository.
 
@@ -32,25 +32,8 @@ pip installl -r requirements.txt
 ```
 
 3. Download the *[VOC](https://www.kaggle.com/huanghanchina/pascal-voc-2012)* dataset(VOC [SegmetationClassAug](http://home.bharathh.info/pubs/codes/SBD/download.html) if you need) .
-4. Getting U-Net weights.
 
-```shell
-wget https://github.com/Runist/U-Net-keras/releases/download/v0.1/unet_weights.h5
-```
 
-4. Run **predict.py**, you'll see the result of U-Net.
-
-```shell
-python predict.py
-```
-
-Input image:
-
-![inputs.jpg](https://i.loli.net/2021/06/21/H8YfZ9cQRoipJ4u.jpg)
-
-Output image（resize to 320 x 320）:
-
-![result.jpg](https://i.loli.net/2021/06/21/79ShFWMgrNTAXaY.jpg)
 
 ## Part 3. Train your own dataset
 1. You should rewrite your data pipeline, *Dateset* where in *dataset.py* is the base class, such as  *VOCdataset.py*. 
