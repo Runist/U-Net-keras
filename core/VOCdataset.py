@@ -300,7 +300,5 @@ class VOCDataset(Dataset):
         dataset = dataset.map(self.parse, num_parallel_calls=1)
         dataset = dataset.repeat().batch(self.batch_size)
         dataset = dataset.prefetch(tf.data.experimental.AUTOTUNE)
-        if self.aug:
-            dataset = dataset.shuffle(buffer_size=256)
 
         return dataset

@@ -48,7 +48,8 @@ def train_by_fit(model, epochs, train_gen, test_gen, train_steps, test_steps):
               validation_data=test_gen,
               validation_steps=test_steps,
               epochs=epochs,
-              callbacks=cbk)
+              callbacks=cbk,
+              shuffle=True)
 
 
 if __name__ == '__main__':
